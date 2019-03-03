@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>safe places</title>
+</head>
+<body>
+<table>
+	<tr>
+		<th>Location</th>
+		<th>Address 1</th>
+		<th>Address 2</th>
+		<th>Address 3</th>
+		<th>City</th>
+		<th>Post Code</th>
+		<th>Latitude</th>
+		<th>Longitude</th>
+		
+<?php
+	$hostname = "localhost";
+	$username = "hkhan79";
+	$password = "Farry999";
+	$dbname = "hkhan79";
+
+	//create connecion 
+	$conn = new MySQLi($hostname, $username, $password, $dbname);
+
+	//check connection 
+	if ($conn->connect_error) {
+		die("connection failed: " . $conn->connect_error);
+	}		
+	
+	</tr>
+</table>
+</body>
+</html>
