@@ -1,0 +1,60 @@
+<?php
+inlclude_once('connection.php');
+$query="select * from Safe Places";
+$result=mysql_query($query);
+?>
+
+<!DOCTYPE html>
+<html>
+	<title>
+		<head> Feth Data from Database</head>
+	
+	</title>
+<body>
+	
+	<table align="center" border="1px" style="width:300px; line-height:30px;">
+		<tr>
+			<th><h2>Location</h2></th>
+			<th> Address 1 </th>
+			<th> Address 2 </th>
+			<th> Address 3 </th>
+			<th> City </th>
+			<th> Post Code </th>
+			<th> Latitude </th>
+			<th> Longitude </th>
+		</t>
+	<?php
+		while($rows=mysql_fetch_assoc($result))
+		{
+?>
+		<tr>
+			<td><?php echo $rows['Location'];></td>
+			<td><?php echo $rows['Address 1'];></td>
+			<td><?php echo $rows['Address 2'];?></td>
+			<td><?php echo $rows['Address 3'];?></td>
+			<td><?php echo $rows['City'];></td>
+			<td><?php echo $rows['Post Code'];?></td>
+			<td><?php echo $rows['Latitude'];?></td>
+			<td><?php echo $rows['Longitude'];?></td>
+</tr>
+	<?php
+	}
+	?>
+			
+		
+		
+		
+		
+	
+	
+	
+	</table>
+	
+	
+	
+	</body>
+
+
+
+
+</html>
