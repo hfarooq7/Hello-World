@@ -1,0 +1,63 @@
+<?php
+//include the connection from server php
+class SampleTest extends /PHPUnit_FrameworkTestCase
+{
+	
+
+include('server.php') ?>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+
+
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class=" BMDC logo"> 
+	<!-- BMDC logo for the website -->
+	<img src="https://bradfordmdc.files.wordpress.com/2017/08/wordpress-featured-image-bradford-council-logo-2017c1.png?w=604&h=270&crop=1" width="270px" height="110px" alt="City of Bradford Metropolitan District Council logo" /> </div>
+<!-- BMDC title for the website -->
+<h1>Welcome to Bradford Metropolitan District Council</h1>
+<nav class ="nav">
+<!-- BMDC navigation bar for the website showing three links below -->
+  <ul>
+    <li><a href ="#">Department of Place</a></li>
+    <li><a href ="#">Department of Children Services</a></li>
+    <li><a href ="#">Department of Adult Services</a></li>
+  </ul>
+</nav>
+
+<div class="login">
+<!-- title for the login page -->
+	<h2>Sign In</h2>	
+<form class="box" action="login.php" method="post">
+	<?php 
+	//including the errors.php 
+	include('errors.php'); ?>
+	<!-- header for username textfield -->
+     <label>Username</label><br>
+	<!-- creating a textfield for user to enter username -->
+      <input name="username" type ="text" class="value" placeholder= "Username" required/><br>
+	<!-- header for password textfield -->
+      <label>Password</label><br>
+	<!-- creating a textfield for user to enter password -->
+      <input name="password" type ="password" class="value" placeholder= "Password" required/><br>
+	<!-- creating a button for user to sign in -->
+      <input name="login_user" type="submit" class="login_btn" value="Sign in"/><br>
+	<!-- creating a button for user to naviagte to registering page -->
+	<a href="register.php"><input type="button" class="register_btn" value="Register"/></a>
+	<!-- creating a button for user admin to navigate to admin login -->
+	<a href="admin.php"><input name= "admin_user" type="button" class="admin_btn" value="Admin"/></a>
+	 	<p>
+  		Not yet a member? <a href="register.php">Sign up</a>
+  	</p>
+
+    </form>
+
+	
+	</div>
+
+</body>
+}
+</html>
