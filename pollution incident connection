@@ -1,0 +1,51 @@
+<?php 
+$connection = mysqli_connect('localhost', 'hkhan79', 'Farry999', 'hkhan79');
+$result = mysqli_query($connection, "SELECT * FROM TABLEPOLLUTION");
+if($result){
+echo "";
+}
+
+
+?>
+
+
+
+
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Date', 'Cause', 'latitude'],
+<?php 
+  if(mysqli_num_rows($result)>0){
+   while($row = mysqli_fetch_array($result)){
+    echo "['".$row['Date']."', '".$row['Cause']."', ['".$row['latitude']."']],";
+   }
+  }
+  ?>
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Bradford District Council Datasets',
+            subtitle: 'Fleet Vehicles',
+          },
+          bars: 'verticle' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width: 2000px; height: 9000px;"></div>
+  </body>
+</html>
