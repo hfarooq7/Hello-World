@@ -1,0 +1,3 @@
+//test
+$query="UPDATE users SET email='test@gmail.com' WHERE username='Haseeb'";
+$result=mysql_query($query);
