@@ -1,0 +1,6 @@
+//test
+if (!$dbcon) {
+	die('error connecting to database');
+}
+
+echo 'you have connected successfully';
